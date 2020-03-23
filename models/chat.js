@@ -2,7 +2,8 @@ import chatScreen from "../views/chat.js";
 
 let activeCon = {
   id: "QdeLV760HZzcVtLOhIbO",
-  name: "Hello"
+  name: "Hello",
+  users: ["quan.nh.25595@gmail.com"]
 };
 
 const chatModel = {
@@ -19,10 +20,16 @@ const chatModel = {
   listenCon: function() {
     DB.collection("conversations").onSnapshot(function(querySnapshot) {
       querySnapshot.docChanges().forEach(function(change) {
-        chatScreen.addCon({
-          id: change.doc.id,
-          name: change.doc.data().name
-        });
+        if (change.type === "added") {
+          chatScreen.addCon({
+            id: change.doc.id,
+            name: change.doc.data().name
+          });
+        }
+        if (change.type === "modified") {
+          activeCon.users = change.doc.data().users;
+          chatScreen.updateActiveCon();
+        }
       });
     });
   },

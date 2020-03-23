@@ -40,6 +40,7 @@ const ui = `
             <button type="submit" class="btn btn-primary">Invite</button>
           </div>
         </form>
+        <ul id="js-listUser"></ul>
       </div>
     </div>
   </div>
@@ -67,6 +68,7 @@ function onload() {
     event.preventDefault();
     const email = formInvite.email.value;
     chatController.inviteUser(email);
+    formInvite.email.value = "";
   });
 }
 
@@ -96,11 +98,22 @@ function addMsg(msg) {
   document.getElementById("js-chatBox").appendChild(msgContainer);
 }
 
+function updateActiveCon() {
+  const listUserUl = document.getElementById("js-listUser");
+  listUserUl.innerHTML = "";
+  for (let i = 0; i < activeCon.users.length; i++) {
+    const userLi = document.createElement("li");
+    userLi.innerHTML = activeCon.users[i];
+    listUserUl.appendChild(userLi);
+  }
+}
+
 const chatScreen = {
   ui: ui,
   onload: onload,
   addCon: addCon,
-  addMsg: addMsg
+  addMsg: addMsg,
+  updateActiveCon: updateActiveCon
 };
 
 export default chatScreen;
