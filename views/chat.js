@@ -16,7 +16,7 @@ const ui = `
     <ul id="js-listCon" class="list"></ul>
   </div>
   <div class="grow-2 d-flex flex-col">
-    <header>Header</header>
+    <header id="js-chatHeader">Header</header>
     <div class="grow-1 d-flex">
       <div class="grow-2 d-flex flex-col">
         <div class="grow-1 border-right border-bottom p-sm overflow flex-basis-0" id="js-chatBox"></div>
@@ -84,6 +84,7 @@ function addCon(con) {
       document.getElementById(activeCon.id).classList.remove("active");
     }
     chatController.updateActiveCon(event.target.id);
+    document.getElementById("js-chatBox").innerHTML = "";
   });
   document.getElementById("js-listCon").appendChild(conLi);
 }
@@ -94,7 +95,7 @@ function addMsg(msg) {
   const msgDiv = document.createElement("div");
   msgDiv.classList.add("msg", "my-sm");
   msgDiv.innerHTML = msg.content;
-  if (msg.user_id === firebase.auth().currentUser.uid) {
+  if (msg.user_email === firebase.auth().currentUser.email) {
     msgContainer.classList.add("justify-end");
     msgDiv.classList.add("msg-primary");
   } else {
@@ -106,6 +107,9 @@ function addMsg(msg) {
 
 function updateActiveCon() {
   document.getElementById(activeCon.id).classList.add("active");
+
+  document.getElementById("js-chatHeader").innerHTML = activeCon.name;
+
   const listUserUl = document.getElementById("js-listUser");
   listUserUl.innerHTML = "";
   for (let i = 0; i < activeCon.users.length; i++) {

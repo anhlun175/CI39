@@ -2,6 +2,8 @@ import chatScreen from "../views/chat.js";
 
 let activeCon = {};
 
+let unsub = function() {};
+
 const chatModel = {
   saveConversation: function(newConversation) {
     DB.collection("conversations").add(newConversation);
@@ -35,22 +37,35 @@ const chatModel = {
       });
   },
   listenMsg: function() {
-    DB.collection("messages").onSnapshot(function(querySnapshot) {
-      querySnapshot.docChanges().forEach(function(change) {
-        chatScreen.addMsg(change.doc.data());
-      });
-    });
+    if (activeCon.id) {
+      unsub();
+      unsub = DB.collection("messages")
+        .where("conversation_id", "==", activeCon.id)
+        .onSnapshot(function(querySnapshot) {
+          querySnapshot.docChanges().forEach(function(change) {
+            chatScreen.addMsg(change.doc.data());
+          });
+        });
+    }
   },
   saveMsg: function(newMsg) {
     DB.collection("messages").add({
       conversation_id: activeCon.id,
       content: newMsg,
-      user_id: firebase.auth().currentUser.uid
+      user_email: firebase.auth().currentUser.email
     });
   },
   updateActiveCon: function(newConId) {
-    activeCon.id = newConId;
-    chatScreen.updateActiveCon();
+    DB.collection("conversations")
+      .doc(newConId)
+      .get()
+      .then(function(doc) {
+        activeCon.name = doc.data().name;
+        activeCon.id = doc.id;
+        activeCon.users = doc.data().users;
+        chatModel.listenMsg();
+        chatScreen.updateActiveCon();
+      });
   }
 };
 
