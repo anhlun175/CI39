@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCkQL98SxJe7q_P1cW6j4oM6lgtxOp2zk8",
+    authDomain: "mindx-ci39.firebaseapp.com",
+    databaseURL: "https://mindx-ci39.firebaseio.com",
+    projectId: "mindx-ci39",
+    storageBucket: "mindx-ci39.appspot.com",
+    messagingSenderId: "327460317861",
+    appId: "1:327460317861:web:39b8373e76773d6136bb4c"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const DB = firebase.firestore();
+</script>
+<script src="./index.js" type="module"></script>
+
+</html>

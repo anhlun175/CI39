@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4bc5f0ff-6ff9-49b6-9299-e1d8f206aefa" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1YR5y8S3FLfSez8JiT6qqT1g9m5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ReactJS/video-player-js" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4bc5f0ff-6ff9-49b6-9299-e1d8f206aefa" name="Default Changelist" comment="" />
+      <created>1582892817450</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582892817450</updated>
+      <workItem from="1582892818674" duration="9159000" />
+      <workItem from="1582961084122" duration="91000" />
+      <workItem from="1583497976794" duration="26000" />
+      <workItem from="1583498013486" duration="9955000" />
+      <workItem from="1583671197559" duration="811000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2241" y="27" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.inPresentationMode" timestamp="1582895167904">
+      <screen x="1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="2241" y="27" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.inPresentationMode/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1582895167904" />
+    <state x="987" y="275" key="FileChooserDialogImpl" timestamp="1583672175694">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="2660" y="275" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582961172513" />
+    <state x="987" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.-376.1080.1880@0.0.2560.1040" timestamp="1583672175694" />
+    <state x="294" y="70" width="996" height="707" key="SettingsEditor" timestamp="1583498864153">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" key="SettingsEditor/0.0.1536.824/1920.0.1280.680@0.0.1536.824" timestamp="1583498002262" />
+    <state x="294" y="70" width="996" height="707" key="SettingsEditor/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1583498864153" />
+    <state x="1920" y="0" width="1217" height="680" key="find.popup.inPresentationMode" timestamp="1582896000558">
+      <screen x="1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="1920" y="0" width="1217" height="680" key="find.popup.inPresentationMode/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1582896000558" />
+    <state x="1920" y="149" key="run.anything.popup.inPresentationMode" timestamp="1582895741796">
+      <screen x="1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="1920" y="149" key="run.anything.popup.inPresentationMode/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1582895741796" />
+    <state x="2223" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583500645956">
+      <screen x="1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="1920" y="0" width="1344" height="676" key="search.everywhere.popup.inPresentationMode" timestamp="1582897126940">
+      <screen x="1920" y="0" width="1280" height="680" />
+    </state>
+    <state x="1920" y="0" width="1344" height="676" key="search.everywhere.popup.inPresentationMode/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1582897126940" />
+    <state x="2223" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1280.680@1920.0.1280.680" timestamp="1583500645956" />
+  </component>
+</project>
