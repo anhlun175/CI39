@@ -1,5 +1,5 @@
 import chatController from "../controllers/chat.js";
-import {activeCon} from "../models/chat.js";
+import { activeCon } from "../models/chat.js";
 
 const ui = `
 <div class="d-flex w-100 h-100">
@@ -31,7 +31,16 @@ const ui = `
           </form>
         </div>
       </div>
-      <div class="grow-1">Info bar</div>
+      <div class="grow-1">
+        <form class="inline" id="js-formInvite">
+          <div class="form-group grow-1">
+            <input type="email" class="form-control" placeholder="Enter email ..." id="email"/>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Invite</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
@@ -39,18 +48,25 @@ const ui = `
 
 function onload() {
   const formCreateCon = document.getElementById("js-formCreateCon");
-  formCreateCon.addEventListener("submit", function (event) {
+  formCreateCon.addEventListener("submit", function(event) {
     event.preventDefault();
     const name = formCreateCon.name.value;
     chatController.createConversation(name);
     formCreateCon.name.value = "";
   });
-  
+
   const formSendMsg = document.getElementById("js-formSendMsg");
-  formSendMsg.addEventListener("submit", function (event) {
+  formSendMsg.addEventListener("submit", function(event) {
     event.preventDefault();
     const msg = formSendMsg.msg.value;
     chatController.sendMsg(msg);
+  });
+
+  const formInvite = document.getElementById("js-formInvite");
+  formInvite.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const email = formInvite.email.value;
+    chatController.inviteUser(email);
   });
 }
 
