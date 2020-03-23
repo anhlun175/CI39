@@ -1,10 +1,6 @@
 import chatScreen from "../views/chat.js";
 
-let activeCon = {
-  id: "QdeLV760HZzcVtLOhIbO",
-  name: "Hello",
-  users: ["quan.nh.25595@gmail.com"]
-};
+let activeCon = {};
 
 const chatModel = {
   saveConversation: function(newConversation) {
@@ -18,20 +14,25 @@ const chatModel = {
       });
   },
   listenCon: function() {
-    DB.collection("conversations").onSnapshot(function(querySnapshot) {
-      querySnapshot.docChanges().forEach(function(change) {
-        if (change.type === "added") {
-          chatScreen.addCon({
-            id: change.doc.id,
-            name: change.doc.data().name
-          });
-        }
-        if (change.type === "modified") {
-          activeCon.users = change.doc.data().users;
-          chatScreen.updateActiveCon();
-        }
+    DB.collection("conversations")
+      .where("users", "array-contains", firebase.auth().currentUser.email)
+      .onSnapshot(function(querySnapshot) {
+        querySnapshot.docChanges().forEach(function(change) {
+          if (change.type === "added") {
+            chatScreen.addCon({
+              id: change.doc.id,
+              name: change.doc.data().name
+            });
+          }
+          if (change.type === "modified") {
+            console.log(activeCon.id);
+            if (activeCon.id === change.doc.id) {
+              activeCon.users = change.doc.data().users;
+              chatScreen.updateActiveCon();
+            }
+          }
+        });
       });
-    });
   },
   listenMsg: function() {
     DB.collection("messages").onSnapshot(function(querySnapshot) {
@@ -46,6 +47,10 @@ const chatModel = {
       content: newMsg,
       user_id: firebase.auth().currentUser.uid
     });
+  },
+  updateActiveCon: function(newConId) {
+    activeCon.id = newConId;
+    chatScreen.updateActiveCon();
   }
 };
 

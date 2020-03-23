@@ -79,6 +79,12 @@ function addCon(con) {
   if (con.id === activeCon.id) {
     conLi.classList.add("active");
   }
+  conLi.addEventListener("click", function(event) {
+    if (activeCon.id) {
+      document.getElementById(activeCon.id).classList.remove("active");
+    }
+    chatController.updateActiveCon(event.target.id);
+  });
   document.getElementById("js-listCon").appendChild(conLi);
 }
 
@@ -99,6 +105,7 @@ function addMsg(msg) {
 }
 
 function updateActiveCon() {
+  document.getElementById(activeCon.id).classList.add("active");
   const listUserUl = document.getElementById("js-listUser");
   listUserUl.innerHTML = "";
   for (let i = 0; i < activeCon.users.length; i++) {

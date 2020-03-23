@@ -19,6 +19,9 @@ const chatController = {
   },
   inviteUser: function(email) {
     chatModel.updateListUser(email);
+  },
+  updateActiveCon: function(conId) {
+    chatModel.updateActiveCon(conId);
   }
 };
 
